@@ -29,6 +29,7 @@ class DotaModel with ChangeNotifier {
   RecentMatch shortestPlay;
   bool isReady = false;
   String error;
+  bool withinOneYear = true;
 
   DotaModel({Dio networkProvider}) {
     this.networkProvider = networkProvider ?? Dio();
@@ -65,8 +66,11 @@ class DotaModel with ChangeNotifier {
     return win / total;
   }
 
-  String _getURL({@required String path}) {
-    return "$baseURL/$accountID/$path?date=365";
+  String _getURL({@required String path, bool withinOneYear = true}) {
+    if (withinOneYear) {
+      return "$baseURL/$accountID/$path?date=365";
+    }
+    return "$baseURL/$accountID/$path";
   }
 
   static String getImageName(String heroName) {
@@ -81,7 +85,7 @@ class DotaModel with ChangeNotifier {
   }
 
   Future<WinLose> getWinLose() async {
-    String url = _getURL(path: "wl");
+    String url = _getURL(path: "wl", withinOneYear: withinOneYear);
     Response response = await this.networkProvider.get(url);
     return WinLose.fromJson(response.data);
   }
@@ -94,13 +98,13 @@ class DotaModel with ChangeNotifier {
 
   /// get list of heros played
   Future<List<Heros>> getHeros() async {
-    String url = _getURL(path: "heroes");
+    String url = _getURL(path: "heroes", withinOneYear: withinOneYear);
     var response = await this.networkProvider.get<List>(url);
     return response.data.map((d) => Heros.fromJson(d)).toList();
   }
 
   Future<List<Counts>> getCounts() async {
-    String url = _getURL(path: "counts");
+    String url = _getURL(path: "counts", withinOneYear: withinOneYear);
     var response = await this.networkProvider.get<List>(url);
     return response.data.map((d) => Counts.fromJson(d)).toList();
   }

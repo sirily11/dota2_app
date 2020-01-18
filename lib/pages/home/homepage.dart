@@ -2,6 +2,7 @@ import 'package:dota2/models/data_object.dart';
 import 'package:dota2/models/dota_model.dart';
 import 'package:dota2/pages/home/subpages/chartPage.dart';
 import 'package:dota2/pages/home/subpages/heroPage.dart';
+import 'package:dota2/pages/home/subpages/ranking.dart';
 import 'package:dota2/pages/home/subpages/userinfo.dart';
 import 'package:flutter/material.dart';
 import 'package:progress_indicators/progress_indicators.dart';
@@ -170,6 +171,7 @@ class _HomePageState extends State<HomePage> {
     }
     var views = [
       UserInfoPage(
+        withinOneYear: model.withinOneYear,
         player: model.player,
         recentMatches: model.recentMatches,
         winLose: model.winLose,
@@ -179,6 +181,10 @@ class _HomePageState extends State<HomePage> {
         playedHeroes: model.playedHeroes,
       ),
       HeroPage2(
+        heroes: model.heroes,
+        playedHeroes: model.playedHeroes,
+      ),
+      RankingPage(
         heroes: model.heroes,
         playedHeroes: model.playedHeroes,
       ),
@@ -192,7 +198,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(),
       body: TransformerPageView(
         loop: false,
-        itemCount: 4,
+        itemCount: 5,
         transformer: ZoomOutPageTransformer(),
         scrollDirection: Axis.vertical,
         itemBuilder: (context, index) {

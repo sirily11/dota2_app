@@ -6,9 +6,11 @@ class UserInfoPage extends StatelessWidget {
   final Player player;
   final WinLose winLose;
   final List<RecentMatch> recentMatches;
+  final bool withinOneYear;
 
   UserInfoPage(
       {@required this.player,
+      @required this.withinOneYear,
       @required this.winLose,
       @required this.recentMatches});
 
@@ -58,7 +60,9 @@ class UserInfoPage extends StatelessWidget {
   RichText buildBody() {
     return RichText(
       text: TextSpan(children: [
-        TextSpan(text: "你在过去的365天里玩了 ", style: shadowStyle),
+        withinOneYear
+            ? TextSpan(text: "你在过去的365天里玩了 ", style: shadowStyle)
+            : TextSpan(text: "你在过去玩了 ", style: shadowStyle),
         TextSpan(
           text: "${winLose.win + winLose.lose} ",
           style: shadowStyle.copyWith(color: Colors.red, fontSize: 30),

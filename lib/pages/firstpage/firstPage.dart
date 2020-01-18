@@ -10,11 +10,8 @@ class FirstPage extends StatefulWidget {
 }
 
 class _FirstPageState extends State<FirstPage> {
-  TextEditingController controller = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
-    DotaModel model = Provider.of(context);
     return Scaffold(
       body: Stack(
         children: <Widget>[
@@ -47,44 +44,7 @@ class _FirstPageState extends State<FirstPage> {
                   onPressed: () {
                     showDialog(
                       context: context,
-                      builder: (_) => AlertDialog(
-                        title: Text("Your Dota ID"),
-                        content: TextField(
-                          keyboardType: TextInputType.number,
-                          inputFormatters: <TextInputFormatter>[
-                            WhitelistingTextInputFormatter.digitsOnly
-                          ],
-                          decoration: InputDecoration(
-                            labelText: "SteamID",
-                            helperText:
-                                "Your Dota2 ID on your dota's main screen",
-                          ),
-                          controller: controller,
-                        ),
-                        actions: <Widget>[
-                          FlatButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: Text("Cancel"),
-                          ),
-                          FlatButton(
-                            onPressed: () {
-                              if (controller.text.isEmpty) {
-                                return;
-                              }
-
-                              model.accountID = controller.text;
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (_) => HomePage(),
-                                ),
-                              );
-                            },
-                            child: Text("OK"),
-                          )
-                        ],
-                      ),
+                      builder: (_) => ConfirmDialog(),
                     );
                   },
                   child: Text(
@@ -112,6 +72,80 @@ class _FirstPageState extends State<FirstPage> {
           )
         ],
       ),
+    );
+  }
+}
+
+class ConfirmDialog extends StatefulWidget {
+  const ConfirmDialog({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  _ConfirmDialogState createState() => _ConfirmDialogState();
+}
+
+class _ConfirmDialogState extends State<ConfirmDialog> {
+  TextEditingController controller = TextEditingController();
+  bool withinOneYear = false;
+
+  @override
+  Widget build(BuildContext context) {
+    DotaModel model = Provider.of(context);
+    return AlertDialog(
+      title: Text("Your Dota ID"),
+      content: Wrap(
+        children: <Widget>[
+          TextField(
+            keyboardType: TextInputType.number,
+            inputFormatters: <TextInputFormatter>[
+              WhitelistingTextInputFormatter.digitsOnly
+            ],
+            decoration: InputDecoration(
+              labelText: "SteamID",
+              helperText: "Your Dota2 ID on your dota's main screen",
+            ),
+            controller: controller,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Text("一年内的数据？"),
+              Checkbox(
+                value: withinOneYear,
+                onChanged: (value) {
+                  setState(() {
+                    withinOneYear = value;
+                  });
+                },
+              ),
+            ],
+          )
+        ],
+      ),
+      actions: <Widget>[
+        FlatButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Text("Cancel"),
+        ),
+        FlatButton(
+          onPressed: () {
+            if (controller.text.isEmpty) {
+              return;
+            }
+            model.withinOneYear = withinOneYear;
+            model.accountID = controller.text;
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => HomePage(),
+              ),
+            );
+          },
+          child: Text("OK"),
+        )
+      ],
     );
   }
 }
