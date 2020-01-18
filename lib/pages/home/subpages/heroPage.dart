@@ -14,17 +14,17 @@ class HeroPage extends StatelessWidget {
   }
 
   Heros _highestWinRateHero() {
-    double maxWinRate = -1;
-    int numOfPlayed = -1;
-    Heros ret;
+    double maxWinRate = playedHeroes[0].win / playedHeroes[0].games;
+    int numOfPlayed = playedHeroes[0].games;
+    Heros ret = playedHeroes[0];
     for (Heros hero in playedHeroes) {
       double rate = hero.win / hero.games;
-      if (rate > maxWinRate && hero.games > numOfPlayed * 0.8) {
+      if (rate > maxWinRate && hero.games > 10) {
         maxWinRate = rate;
         numOfPlayed = hero.games;
         ret = hero;
       } else {
-        if (hero.games > numOfPlayed * 1.2 && rate > 0.5) {
+        if (hero.games > numOfPlayed && rate > 0.5) {
           maxWinRate = rate;
           numOfPlayed = hero.games;
           ret = hero;
@@ -134,7 +134,7 @@ class HeroPage extends StatelessWidget {
                     style: shadowStyle,
                   ),
             mostPlayedHero != highestWinRateHero
-                ? null
+                ? TextSpan(text: "")
                 : TextSpan(
                     text: "还真是",
                     style:
