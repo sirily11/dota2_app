@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:dota2/models/data_object.dart';
 import 'package:dota2/models/dota_model.dart';
 import 'package:dota2/models/heros.dart';
@@ -30,6 +32,14 @@ class _RankingPageState extends State<RankingPage> {
           "assets/backgrounds/bg7.jpg",
           fit: BoxFit.cover,
           height: MediaQuery.of(context).size.height,
+        ),
+        Positioned.fill(
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+            child: Container(
+              color: Colors.black.withOpacity(0),
+            ),
+          ),
         ),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 0, vertical: 60),
