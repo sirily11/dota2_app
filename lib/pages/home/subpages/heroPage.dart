@@ -19,13 +19,12 @@ class HeroPage extends StatelessWidget {
     Heros ret;
     for (Heros hero in playedHeroes) {
       double rate = hero.win / hero.games;
-      if (rate > maxWinRate) {
+      if (rate > maxWinRate && hero.games > numOfPlayed * 0.8) {
         maxWinRate = rate;
         numOfPlayed = hero.games;
         ret = hero;
-      }
-      if (rate == maxWinRate) {
-        if (hero.games > numOfPlayed) {
+      } else {
+        if (hero.games > numOfPlayed * 1.2 && rate > 0.5) {
           maxWinRate = rate;
           numOfPlayed = hero.games;
           ret = hero;
@@ -87,7 +86,7 @@ class HeroPage extends StatelessWidget {
                       shadowStyle.copyWith(color: Colors.yellow, fontSize: 50),
                 ),
                 buildMostPlayed(mostPlayedHero),
-                buildHighestWinRate(highestWinRateHero),
+                buildHighestWinRate(highestWinRateHero, mostPlayedHero),
                 buildLowestWinRatePlayed(lowestWinRateHero),
               ],
             ),
@@ -107,7 +106,7 @@ class HeroPage extends StatelessWidget {
     );
   }
 
-  Column buildHighestWinRate(Heros highestWinRateHero) {
+  Column buildHighestWinRate(Heros highestWinRateHero, Heros mostPlayedHero) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
@@ -125,10 +124,22 @@ class HeroPage extends StatelessWidget {
         ),
         RichText(
           text: TextSpan(children: [
-            TextSpan(
-              text: "然而事实上你的本命英雄是 ",
-              style: shadowStyle,
-            ),
+            mostPlayedHero != highestWinRateHero
+                ? TextSpan(
+                    text: "然而事实上你的本命英雄是 ",
+                    style: shadowStyle,
+                  )
+                : TextSpan(
+                    text: "然而事实上你的本命英雄",
+                    style: shadowStyle,
+                  ),
+            mostPlayedHero != highestWinRateHero
+                ? null
+                : TextSpan(
+                    text: "还真是",
+                    style:
+                        shadowStyle.copyWith(fontSize: 40, color: Colors.green),
+                  ),
             TextSpan(
               text: "${getDotaHero(highestWinRateHero).localizedName} ",
               style: shadowStyle.copyWith(color: Colors.blue, fontSize: 30),
