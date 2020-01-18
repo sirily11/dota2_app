@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:dota2/models/data_object.dart';
 import 'package:dota2/models/dota_model.dart';
 import 'package:dota2/models/heros.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class HeroPage2 extends StatelessWidget {
@@ -73,12 +76,16 @@ class HeroPage2 extends StatelessWidget {
                           fit: BoxFit.cover,
                         );
                       } else {
+                        if (kIsWeb) {
+                          return Container();
+                        }
                         return ColorFiltered(
                           colorFilter:
                               ColorFilter.mode(Colors.grey, BlendMode.color),
                           child: Image.asset(
                             "assets/heros/${DotaModel.getImageName(names[index])}",
                             fit: BoxFit.cover,
+                            height: 100,
                           ),
                         );
                       }

@@ -111,22 +111,17 @@ class HeroPage extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Row(
-          children: <Widget>[
-            Spacer(),
-            Container(
-              height: 100,
-              width: 100,
-              decoration: new BoxDecoration(
-                shape: BoxShape.circle,
-                image: new DecorationImage(
-                  fit: BoxFit.cover,
-                  image: AssetImage(
-                      "assets/heros/${DotaModel.getImageName(getDotaHero(highestWinRateHero).name)}"),
-                ),
-              ),
+        Container(
+          height: 100,
+          width: 100,
+          decoration: new BoxDecoration(
+            shape: BoxShape.circle,
+            image: new DecorationImage(
+              fit: BoxFit.cover,
+              image: AssetImage(
+                  "assets/heros/${DotaModel.getImageName(getDotaHero(highestWinRateHero).name)}"),
             ),
-          ],
+          ),
         ),
         RichText(
           text: TextSpan(children: [
