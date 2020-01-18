@@ -27,7 +27,7 @@ class UserInfoPage extends StatelessWidget {
     return Stack(
       children: <Widget>[
         Image.asset(
-          "assets/backgrounds/bg2.jpg",
+          "assets/backgrounds/bg8.jpg",
           fit: BoxFit.cover,
           height: MediaQuery.of(context).size.height,
         ),

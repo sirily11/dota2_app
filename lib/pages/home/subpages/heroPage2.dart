@@ -35,7 +35,7 @@ class HeroPage2 extends StatelessWidget {
     return Stack(
       children: <Widget>[
         Image.asset(
-          "assets/backgrounds/bg3.jpg",
+          "assets/backgrounds/bg7.jpg",
           fit: BoxFit.cover,
           height: MediaQuery.of(context).size.height,
         ),

@@ -4,7 +4,8 @@ import 'package:dota2/models/heros.dart';
 import 'package:flutter/material.dart';
 
 final shadowStyle = TextStyle(
-  fontSize: 20,
+  fontSize: 15,
+  color: Colors.white,
   shadows: [
     Shadow(
       blurRadius: 1,

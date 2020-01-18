@@ -463,7 +463,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 53,
     "name": "npc_dota_hero_furion",
-    "localized_name": "Nature's Prophet",
+    "localized_name": "先知",
     "primary_attr": "int",
     "attack_type": "Ranged",
     "roles": ["Carry", "Jungler", "Pusher", "Escape", "Nuker"],

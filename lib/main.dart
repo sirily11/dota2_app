@@ -17,8 +17,10 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'Dota Data',
+        themeMode: ThemeMode.dark,
+        darkTheme: ThemeData.dark(),
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.green,
           textTheme: TextTheme().apply(
             bodyColor: Colors.white,
             displayColor: Colors.white,
