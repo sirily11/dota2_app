@@ -202,7 +202,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 23,
     "name": "npc_dota_hero_kunkka",
-    "localized_name": "Kunkka",
+    "localized_name": "昆卡",
     "primary_attr": "str",
     "attack_type": "Melee",
     "roles": ["Carry", "Support", "Disabler", "Initiator", "Durable", "Nuker"],
@@ -211,7 +211,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 25,
     "name": "npc_dota_hero_lina",
-    "localized_name": "Lina",
+    "localized_name": "丽娜",
     "primary_attr": "int",
     "attack_type": "Ranged",
     "roles": ["Support", "Carry", "Nuker", "Disabler"],
@@ -220,7 +220,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 26,
     "name": "npc_dota_hero_lion",
-    "localized_name": "Lion",
+    "localized_name": "莱恩",
     "primary_attr": "int",
     "attack_type": "Ranged",
     "roles": ["Support", "Disabler", "Nuker", "Initiator"],
@@ -229,7 +229,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 27,
     "name": "npc_dota_hero_shadow_shaman",
-    "localized_name": "Shadow Shaman",
+    "localized_name": "暗影萨满",
     "primary_attr": "int",
     "attack_type": "Ranged",
     "roles": ["Support", "Pusher", "Disabler", "Nuker", "Initiator"],
@@ -238,7 +238,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 28,
     "name": "npc_dota_hero_slardar",
-    "localized_name": "Slardar",
+    "localized_name": "斯拉达",
     "primary_attr": "str",
     "attack_type": "Melee",
     "roles": ["Carry", "Durable", "Initiator", "Disabler", "Escape"],
@@ -247,7 +247,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 29,
     "name": "npc_dota_hero_tidehunter",
-    "localized_name": "Tidehunter",
+    "localized_name": "潮汐猎人",
     "primary_attr": "str",
     "attack_type": "Melee",
     "roles": ["Initiator", "Durable", "Disabler", "Nuker"],
@@ -274,7 +274,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 32,
     "name": "npc_dota_hero_riki",
-    "localized_name": "Riki",
+    "localized_name": "力丸",
     "primary_attr": "agi",
     "attack_type": "Melee",
     "roles": ["Carry", "Escape", "Disabler"],
@@ -283,7 +283,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 33,
     "name": "npc_dota_hero_enigma",
-    "localized_name": "Enigma",
+    "localized_name": "黑洞王",
     "primary_attr": "int",
     "attack_type": "Ranged",
     "roles": ["Disabler", "Jungler", "Initiator", "Pusher"],
@@ -292,7 +292,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 34,
     "name": "npc_dota_hero_tinker",
-    "localized_name": "Tinker",
+    "localized_name": "修补匠",
     "primary_attr": "int",
     "attack_type": "Ranged",
     "roles": ["Carry", "Nuker", "Pusher"],
@@ -301,7 +301,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 35,
     "name": "npc_dota_hero_sniper",
-    "localized_name": "Sniper",
+    "localized_name": "狙击老头",
     "primary_attr": "agi",
     "attack_type": "Ranged",
     "roles": ["Carry", "Nuker"],
@@ -310,7 +310,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 36,
     "name": "npc_dota_hero_necrolyte",
-    "localized_name": "Necrophos",
+    "localized_name": "瘟疫法师",
     "primary_attr": "int",
     "attack_type": "Ranged",
     "roles": ["Carry", "Nuker", "Durable", "Disabler"],
@@ -319,7 +319,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 37,
     "name": "npc_dota_hero_warlock",
-    "localized_name": "Warlock",
+    "localized_name": "术士",
     "primary_attr": "int",
     "attack_type": "Ranged",
     "roles": ["Support", "Initiator", "Disabler"],
@@ -328,7 +328,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 38,
     "name": "npc_dota_hero_beastmaster",
-    "localized_name": "Beastmaster",
+    "localized_name": "兽王",
     "primary_attr": "str",
     "attack_type": "Melee",
     "roles": ["Initiator", "Disabler", "Durable", "Nuker"],
@@ -337,7 +337,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 39,
     "name": "npc_dota_hero_queenofpain",
-    "localized_name": "Queen of Pain",
+    "localized_name": "痛苦女王",
     "primary_attr": "int",
     "attack_type": "Ranged",
     "roles": ["Carry", "Nuker", "Escape"],
@@ -346,7 +346,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 40,
     "name": "npc_dota_hero_venomancer",
-    "localized_name": "Venomancer",
+    "localized_name": "剧毒术士",
     "primary_attr": "agi",
     "attack_type": "Ranged",
     "roles": ["Support", "Nuker", "Initiator", "Pusher", "Disabler"],
@@ -355,7 +355,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 41,
     "name": "npc_dota_hero_faceless_void",
-    "localized_name": "Faceless Void",
+    "localized_name": "虚空假面",
     "primary_attr": "agi",
     "attack_type": "Melee",
     "roles": ["Carry", "Initiator", "Disabler", "Escape", "Durable"],
@@ -364,7 +364,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 42,
     "name": "npc_dota_hero_skeleton_king",
-    "localized_name": "Wraith King",
+    "localized_name": "幽冥大帝",
     "primary_attr": "str",
     "attack_type": "Melee",
     "roles": ["Carry", "Support", "Durable", "Disabler", "Initiator"],
@@ -373,7 +373,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 43,
     "name": "npc_dota_hero_death_prophet",
-    "localized_name": "Death Prophet",
+    "localized_name": "死亡先知",
     "primary_attr": "int",
     "attack_type": "Ranged",
     "roles": ["Carry", "Pusher", "Nuker", "Disabler"],
@@ -391,7 +391,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 45,
     "name": "npc_dota_hero_pugna",
-    "localized_name": "Pugna",
+    "localized_name": "帕格娜",
     "primary_attr": "int",
     "attack_type": "Ranged",
     "roles": ["Nuker", "Pusher"],
@@ -400,7 +400,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 46,
     "name": "npc_dota_hero_templar_assassin",
-    "localized_name": "Templar Assassin",
+    "localized_name": "圣堂刺客",
     "primary_attr": "agi",
     "attack_type": "Ranged",
     "roles": ["Carry", "Escape"],
@@ -409,7 +409,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 47,
     "name": "npc_dota_hero_viper",
-    "localized_name": "Viper",
+    "localized_name": "冥界亚龙",
     "primary_attr": "agi",
     "attack_type": "Ranged",
     "roles": ["Carry", "Durable", "Initiator", "Disabler"],
@@ -418,7 +418,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 48,
     "name": "npc_dota_hero_luna",
-    "localized_name": "Luna",
+    "localized_name": "露娜",
     "primary_attr": "agi",
     "attack_type": "Ranged",
     "roles": ["Carry", "Nuker", "Pusher"],
@@ -427,7 +427,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 49,
     "name": "npc_dota_hero_dragon_knight",
-    "localized_name": "Dragon Knight",
+    "localized_name": "龙骑士",
     "primary_attr": "str",
     "attack_type": "Melee",
     "roles": ["Carry", "Pusher", "Durable", "Disabler", "Initiator", "Nuker"],
@@ -454,7 +454,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 52,
     "name": "npc_dota_hero_leshrac",
-    "localized_name": "Leshrac",
+    "localized_name": "拉席克",
     "primary_attr": "int",
     "attack_type": "Ranged",
     "roles": ["Carry", "Support", "Nuker", "Pusher", "Disabler"],
@@ -472,7 +472,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 54,
     "name": "npc_dota_hero_life_stealer",
-    "localized_name": "Lifestealer",
+    "localized_name": "噬魂鬼",
     "primary_attr": "str",
     "attack_type": "Melee",
     "roles": ["Carry", "Durable", "Jungler", "Escape", "Disabler"],
@@ -481,7 +481,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 55,
     "name": "npc_dota_hero_dark_seer",
-    "localized_name": "Dark Seer",
+    "localized_name": "黑暗贤者",
     "primary_attr": "int",
     "attack_type": "Melee",
     "roles": ["Initiator", "Jungler", "Escape", "Disabler"],
@@ -490,7 +490,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 56,
     "name": "npc_dota_hero_clinkz",
-    "localized_name": "Clinkz",
+    "localized_name": "克林克滋",
     "primary_attr": "agi",
     "attack_type": "Ranged",
     "roles": ["Carry", "Escape", "Pusher"],
@@ -499,7 +499,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 57,
     "name": "npc_dota_hero_omniknight",
-    "localized_name": "Omniknight",
+    "localized_name": "全能骑士",
     "primary_attr": "str",
     "attack_type": "Melee",
     "roles": ["Support", "Durable", "Nuker"],
@@ -508,7 +508,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 58,
     "name": "npc_dota_hero_enchantress",
-    "localized_name": "Enchantress",
+    "localized_name": "小鹿",
     "primary_attr": "int",
     "attack_type": "Ranged",
     "roles": ["Support", "Jungler", "Pusher", "Durable", "Disabler"],
@@ -517,7 +517,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 59,
     "name": "npc_dota_hero_huskar",
-    "localized_name": "Huskar",
+    "localized_name": "哈士奇",
     "primary_attr": "str",
     "attack_type": "Ranged",
     "roles": ["Carry", "Durable", "Initiator"],
@@ -526,7 +526,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 60,
     "name": "npc_dota_hero_night_stalker",
-    "localized_name": "Night Stalker",
+    "localized_name": "暗夜魔王",
     "primary_attr": "str",
     "attack_type": "Melee",
     "roles": ["Carry", "Initiator", "Durable", "Disabler", "Nuker"],
@@ -535,7 +535,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 61,
     "name": "npc_dota_hero_broodmother",
-    "localized_name": "Broodmother",
+    "localized_name": "育母蜘蛛",
     "primary_attr": "agi",
     "attack_type": "Melee",
     "roles": ["Carry", "Pusher", "Escape", "Nuker"],
@@ -544,7 +544,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 62,
     "name": "npc_dota_hero_bounty_hunter",
-    "localized_name": "Bounty Hunter",
+    "localized_name": "偷钱狗",
     "primary_attr": "agi",
     "attack_type": "Melee",
     "roles": ["Escape", "Nuker"],
@@ -553,7 +553,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 63,
     "name": "npc_dota_hero_weaver",
-    "localized_name": "Weaver",
+    "localized_name": "织布机启动",
     "primary_attr": "agi",
     "attack_type": "Ranged",
     "roles": ["Carry", "Escape"],
@@ -562,7 +562,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 64,
     "name": "npc_dota_hero_jakiro",
-    "localized_name": "Jakiro",
+    "localized_name": "双头龙",
     "primary_attr": "int",
     "attack_type": "Ranged",
     "roles": ["Support", "Nuker", "Pusher", "Disabler"],
@@ -580,7 +580,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 66,
     "name": "npc_dota_hero_chen",
-    "localized_name": "Chen",
+    "localized_name": "陈",
     "primary_attr": "int",
     "attack_type": "Ranged",
     "roles": ["Support", "Jungler", "Pusher"],
@@ -589,7 +589,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 67,
     "name": "npc_dota_hero_spectre",
-    "localized_name": "Spectre",
+    "localized_name": "幽鬼",
     "primary_attr": "agi",
     "attack_type": "Melee",
     "roles": ["Carry", "Durable", "Escape"],
@@ -616,7 +616,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 70,
     "name": "npc_dota_hero_ursa",
-    "localized_name": "Ursa",
+    "localized_name": "熊战士",
     "primary_attr": "agi",
     "attack_type": "Melee",
     "roles": ["Carry", "Jungler", "Durable", "Disabler"],
@@ -625,7 +625,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 71,
     "name": "npc_dota_hero_spirit_breaker",
-    "localized_name": "Spirit Breaker",
+    "localized_name": "土猫",
     "primary_attr": "str",
     "attack_type": "Melee",
     "roles": ["Carry", "Initiator", "Disabler", "Durable", "Escape"],
@@ -634,7 +634,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 72,
     "name": "npc_dota_hero_gyrocopter",
-    "localized_name": "Gyrocopter",
+    "localized_name": "矮人直升机",
     "primary_attr": "agi",
     "attack_type": "Ranged",
     "roles": ["Carry", "Nuker", "Disabler"],
@@ -643,7 +643,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 73,
     "name": "npc_dota_hero_alchemist",
-    "localized_name": "Alchemist",
+    "localized_name": "炼金术士",
     "primary_attr": "str",
     "attack_type": "Melee",
     "roles": ["Carry", "Support", "Durable", "Disabler", "Initiator", "Nuker"],
@@ -652,7 +652,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 74,
     "name": "npc_dota_hero_invoker",
-    "localized_name": "Invoker",
+    "localized_name": "祈求者",
     "primary_attr": "int",
     "attack_type": "Ranged",
     "roles": ["Carry", "Nuker", "Disabler", "Escape", "Pusher"],
@@ -661,7 +661,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 75,
     "name": "npc_dota_hero_silencer",
-    "localized_name": "Silencer",
+    "localized_name": "沉默术士",
     "primary_attr": "int",
     "attack_type": "Ranged",
     "roles": ["Carry", "Support", "Disabler", "Initiator", "Nuker"],
@@ -1021,7 +1021,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 119,
     "name": "npc_dota_hero_dark_willow",
-    "localized_name": "Dark Willow",
+    "localized_name": "超级可爱的小仙女",
     "primary_attr": "int",
     "attack_type": "Ranged",
     "roles": ["Support", "Nuker", "Disabler", "Escape"],
@@ -1039,7 +1039,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 121,
     "name": "npc_dota_hero_grimstroke",
-    "localized_name": "Grimstroke",
+    "localized_name": "天涯墨客",
     "primary_attr": "int",
     "attack_type": "Ranged",
     "roles": ["Support", "Nuker", "Disabler", "Escape"],
@@ -1048,7 +1048,7 @@ List<Map<String, dynamic>> heroData = [
   {
     "id": 126,
     "name": "npc_dota_hero_void_spirit",
-    "localized_name": "Void Spirit",
+    "localized_name": "虚空之灵",
     "primary_attr": "int",
     "attack_type": "Melee",
     "roles": ["Carry", "Escape", "Nuker", "Disabler"],
