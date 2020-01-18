@@ -222,7 +222,7 @@ class HeroPage extends StatelessWidget {
               style: shadowStyle.copyWith(color: Colors.orange, fontSize: 30),
             ),
             TextSpan(
-              text: "是在是太翔哥了。过去的 ",
+              text: "实在是太翔哥了。过去的 ",
               style: shadowStyle,
             ),
             TextSpan(

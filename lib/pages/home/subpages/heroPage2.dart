@@ -58,7 +58,7 @@ class HeroPage2 extends StatelessWidget {
                   ]),
                 ),
                 Text(
-                  "(灰色意味着你没碰都没碰过)",
+                  "(灰色意味着你连碰都没碰过)",
                   style:
                       shadowStyle.copyWith(color: Colors.white, fontSize: 15),
                 ),
