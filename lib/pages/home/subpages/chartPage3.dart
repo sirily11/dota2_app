@@ -4,12 +4,11 @@ import 'package:dota2/models/heros.dart';
 import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
 
-class ChartPage extends StatelessWidget {
-  final RecentMatch longestMatch;
-  final RecentMatch shortestMatch;
+class ChartPage3 extends StatelessWidget {
+  final Streak streak;
   final List<DotaHero> heroes;
 
-  ChartPage({this.longestMatch, this.shortestMatch, this.heroes});
+  ChartPage3({this.streak, this.heroes});
 
   String getName(int id) {
     return heroes.firstWhere((h) => h.id == id).localizedName;
@@ -31,23 +30,25 @@ class ChartPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text(
-                "过去比赛之最",
+                "过去比赛之连赢\n${streak.winStreaks.length}把",
                 style: shadowStyle.copyWith(color: Colors.white, fontSize: 40),
               ),
               Expanded(
-                child: DataTable(
-                  columnSpacing: 10,
-                  columns: [
-                    DataColumn(label: Text("MatchID")),
-                    DataColumn(label: Text("Hero")),
-                    DataColumn(label: Text("K/D/A")),
-                    DataColumn(label: Text("Duration"))
-                  ],
-                  rows: [longestMatch, shortestMatch]
-                      .map((RecentMatch match) => DataRow(cells: [
+                child: SingleChildScrollView(
+                  child: DataTable(
+                    columnSpacing: 10,
+                    columns: [
+                      DataColumn(label: Text("Match ID")),
+                      DataColumn(label: Text("Hero")),
+                      DataColumn(label: Text("K/D/A")),
+                      DataColumn(label: Text("Duration"))
+                    ],
+                    rows: streak.winStreaks
+                        .map(
+                          (PlayerMatches match) => DataRow(cells: [
                             DataCell(
                               Text(
-                                match.matchId.toString(),
+                                "${match.matchId}",
                               ),
                             ),
                             DataCell(
@@ -64,23 +65,15 @@ class ChartPage extends StatelessWidget {
                                 "${(match.duration / 60).floor()}:${(match.duration % 60)}",
                               ),
                             ),
-                          ]))
-                      .toList(),
+                          ]),
+                        )
+                        .toList(),
+                  ),
                 ),
               )
             ],
           ),
         ),
-        Positioned(
-          bottom: 20,
-          width: MediaQuery.of(context).size.width,
-          child: Center(
-            child: Text(
-              "Slide for more",
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-        )
       ],
     );
   }

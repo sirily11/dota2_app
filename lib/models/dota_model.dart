@@ -25,6 +25,7 @@ class DotaModel with ChangeNotifier {
   List<RecentMatch> recentMatches;
   Counts counts;
   List<Heros> playedHeroes = [];
+  Streak streak;
   RecentMatch longestPlay;
   RecentMatch shortestPlay;
   bool isReady = false;
@@ -52,6 +53,9 @@ class DotaModel with ChangeNotifier {
       this.longestPlay = await getLongestMatch();
       await Future.delayed(Duration(seconds: 1));
       this.shortestPlay = await this.getShortestMatch();
+      await Future.delayed(Duration(seconds: 1));
+      List<PlayerMatches> matches = await this.getPlayerMatches();
+      this.streak = DotaModel.getStreak(matches);
       this.error = null;
     } catch (err) {
       print(err);
@@ -121,5 +125,69 @@ class DotaModel with ChangeNotifier {
         "https://api.opendota.com/api/players/$accountID/matches?sort=duration&limit=1&offset=-1";
     var response = await this.networkProvider.get(url);
     return RecentMatch.fromJson(response.data[0]);
+  }
+
+  Future<List<PlayerMatches>> getPlayerMatches() async {
+    String url;
+    if (!withinOneYear) {
+      url =
+          "https://api.opendota.com/api/players/$accountID/matches?sort=start_time";
+    } else {
+      url =
+          "https://api.opendota.com/api/players/$accountID/matches?sort=start_time&date=365";
+    }
+
+    var response = await this.networkProvider.get<List>(url);
+    List<PlayerMatches> matches =
+        response.data.map((d) => PlayerMatches.fromJson(d)).toList();
+    return matches;
+  }
+
+  static Streak getStreak(List<PlayerMatches> matches) {
+    // Calculate win and lose
+    List<PlayerMatches> winStreaks = [];
+    List<PlayerMatches> tempWinStreaks = [];
+    List<PlayerMatches> loseStreaks = [];
+    List<PlayerMatches> tempLoseStreaks = [];
+
+    for (var match in matches) {
+      bool isWin = (match.playerSlot <= 127 && match.radiantWin) ||
+          (match.playerSlot > 127 && !match.radiantWin);
+      // win
+      if (isWin) {
+        tempWinStreaks.add(match);
+      }
+      if (!isWin || match == matches.last) {
+        if (tempWinStreaks.length > winStreaks.length) {
+          winStreaks = tempWinStreaks
+              .map((t) => t.toJson())
+              .toList()
+              .map((d) => PlayerMatches.fromJson(d))
+              .toList();
+          tempWinStreaks.clear();
+        }
+      }
+    }
+
+    for (var match in matches) {
+      bool isWin = (match.playerSlot <= 127 && match.radiantWin) ||
+          (match.playerSlot > 127 && !match.radiantWin);
+      // lose
+      if (!isWin) {
+        tempLoseStreaks.add(match);
+      }
+
+      if (isWin || match == matches.last) {
+        if (tempLoseStreaks.length > loseStreaks.length) {
+          loseStreaks = tempLoseStreaks
+              .map((t) => t.toJson())
+              .toList()
+              .map((d) => PlayerMatches.fromJson(d))
+              .toList();
+          tempLoseStreaks.clear();
+        }
+      }
+    }
+    return Streak(loseStreaks: loseStreaks, winStreaks: winStreaks);
   }
 }

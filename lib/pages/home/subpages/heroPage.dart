@@ -77,7 +77,7 @@ class HeroPage extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 60),
           child: Center(
-            child: Column(
+            child: ListView(
               // mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text(

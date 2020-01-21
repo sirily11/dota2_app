@@ -1,6 +1,8 @@
 import 'package:dota2/models/data_object.dart';
 import 'package:dota2/models/dota_model.dart';
 import 'package:dota2/pages/home/subpages/chartPage.dart';
+import 'package:dota2/pages/home/subpages/chartPage2.dart';
+import 'package:dota2/pages/home/subpages/chartPage3.dart';
 import 'package:dota2/pages/home/subpages/heroPage.dart';
 import 'package:dota2/pages/home/subpages/ranking.dart';
 import 'package:dota2/pages/home/subpages/userinfo.dart';
@@ -192,13 +194,21 @@ class _HomePageState extends State<HomePage> {
         longestMatch: model.longestPlay,
         shortestMatch: model.shortestPlay,
         heroes: model.heroes,
+      ),
+      ChartPage2(
+        heroes: model.heroes,
+        streak: model.streak,
+      ),
+      ChartPage3(
+        heroes: model.heroes,
+        streak: model.streak,
       )
     ];
     return Scaffold(
       appBar: AppBar(),
       body: TransformerPageView(
         loop: false,
-        itemCount: 5,
+        itemCount: 7,
         transformer: ZoomOutPageTransformer(),
         scrollDirection: Axis.vertical,
         itemBuilder: (context, index) {

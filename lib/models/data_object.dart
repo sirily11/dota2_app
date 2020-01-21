@@ -325,3 +325,82 @@ class GameMode {
         "win": win,
       };
 }
+
+class PlayerMatches {
+  int matchId;
+  int playerSlot;
+  bool radiantWin;
+  int duration;
+  int gameMode;
+  int lobbyType;
+  int heroId;
+  int startTime;
+  dynamic version;
+  int kills;
+  int deaths;
+  int assists;
+  dynamic skill;
+  int leaverStatus;
+  dynamic partySize;
+
+  PlayerMatches({
+    this.matchId,
+    this.playerSlot,
+    this.radiantWin,
+    this.duration,
+    this.gameMode,
+    this.lobbyType,
+    this.heroId,
+    this.startTime,
+    this.version,
+    this.kills,
+    this.deaths,
+    this.assists,
+    this.skill,
+    this.leaverStatus,
+    this.partySize,
+  });
+
+  factory PlayerMatches.fromJson(Map<String, dynamic> json) => PlayerMatches(
+        matchId: json["match_id"],
+        playerSlot: json["player_slot"],
+        radiantWin: json["radiant_win"],
+        duration: json["duration"],
+        gameMode: json["game_mode"],
+        lobbyType: json["lobby_type"],
+        heroId: json["hero_id"],
+        startTime: json["start_time"],
+        version: json["version"],
+        kills: json["kills"],
+        deaths: json["deaths"],
+        assists: json["assists"],
+        skill: json["skill"],
+        leaverStatus: json["leaver_status"],
+        partySize: json["party_size"],
+      );
+
+  Map<String, dynamic> toJson() => {
+        "match_id": matchId,
+        "player_slot": playerSlot,
+        "radiant_win": radiantWin,
+        "duration": duration,
+        "game_mode": gameMode,
+        "lobby_type": lobbyType,
+        "hero_id": heroId,
+        "start_time": startTime,
+        "version": version,
+        "kills": kills,
+        "deaths": deaths,
+        "assists": assists,
+        "skill": skill,
+        "leaver_status": leaverStatus,
+        "party_size": partySize,
+      };
+}
+
+class Streak {
+  List<PlayerMatches> winStreaks;
+  List<PlayerMatches> loseStreaks;
+
+  Streak({this.winStreaks, this.loseStreaks});
+}
